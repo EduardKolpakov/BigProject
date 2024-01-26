@@ -1,0 +1,28 @@
+﻿<Window x:Class="WPFCharacters.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCharacters"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="720" Width="1280" Background="DarkGray">
+    <Grid>
+        <ComboBox x:Name="class_select" Margin="326,24,794,619" Initialized="ComboBox_Initialized" SelectionChanged="class_select_SelectionChanged" Width="160"/>
+        <Label x:Name="classLabel" Content="Choose the class for your character" HorizontalAlignment="Left" Height="45" Margin="0,24,0,0" VerticalAlignment="Top" Width="320" BorderBrush="Black" FontFamily="MV Boli" FontSize="16"/>
+        <Image x:Name="wizardImg" HorizontalAlignment="Left" Height="600" Margin="872,24,0,0" VerticalAlignment="Top" Width="400" Source="C:\Users\Kolpa\Documents\projects\WPFCharacters\props\Wizard.jpg" Initialized="wizardImg_Initialized"/>
+        <Image x:Name="warriorImg" HorizontalAlignment="Left" Height="600" Margin="870,24,0,0" VerticalAlignment="Top" Width="400" Source="C:\Users\Kolpa\Documents\projects\WPFCharacters\props\Warrior.jpg" Visibility="Hidden"/>
+        <Image x:Name="rogueImg" HorizontalAlignment="Left" Height="600" Margin="870,24,0,0" VerticalAlignment="Top" Width="400" Source="C:\Users\Kolpa\Documents\projects\WPFCharacters\props\Rogue.jpg" Visibility="Hidden"/>
+        <Label x:Name="curStr" Content="" HorizontalAlignment="Left" Height="48" Margin="10,175,0,0" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curStr_Initialized"/>
+        <Label x:Name="curVit" HorizontalAlignment="Left" Height="48" Margin="10,234,0,0" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curVit_Initialized"/>
+        <Label x:Name="curDex" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curDex_Initialized" Margin="10,292,0,0"/>
+        <Label x:Name="curInt" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curInt_Initialized" Margin="10,350,0,0"/>
+        <Label x:Name="curHp" Content="" HorizontalAlignment="Left" Height="48" Margin="10,122,0,0" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="curHp_Initialized"/>
+        <Label x:Name="curMp" Content="" HorizontalAlignment="Left" Height="48" Margin="165,120,0,0" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="curMp_Initialized"/>
+        <Button x:Name="plusStr" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,177,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusStr_Initialized" Click="plusStr_Click"/>
+        <Button x:Name="plusVit" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,236,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusVit_Initialized" Click="plusVit_Click"/>
+        <Button x:Name="plusDex" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,294,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusDex_Initialized" Click="plusDex_Click"/>
+        <Button x:Name="plusInt" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,352,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusInt_initialized" Click="plusInt_Click"/>
+        <TextBox x:Name="statpoint" HorizontalAlignment="Left" Height="58" Margin="454,122,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="78" FontFamily="MV Boli" FontSize="18" TextAlignment="Center" Initialized="statpoint_Initialized"/>
+
+    </Grid>
+</Window>
