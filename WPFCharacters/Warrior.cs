@@ -46,6 +46,7 @@ namespace WPFCharacters
                 {
                     Strength = _maxstr;
                 }
+                addVital();
             }
         }
         public int Vitality
@@ -59,12 +60,7 @@ namespace WPFCharacters
                     _vit = _maxvit;
 
                 }
-                int hp = 0;
-                for (int i = 0; i < _vit; i++)
-                {
-                    hp += 2;
-                }
-                MaxHealth = hp;
+                addVital();
             }
         }    
         public int Inteligence
@@ -181,9 +177,18 @@ namespace WPFCharacters
                 _crtdmg = value;
             }
         }
-        public void addVital(int points)
+        public void addVital()
         {
-            Vitality += points;
+            int hp = 0;
+            for (int i = 0; i < _vit; i++)
+            {
+                hp += 2;
+            }
+            for (int i = 0; i < _str; i++)
+            {
+                hp += 1;
+            }
+            MaxHealth = hp;
         }
     }
 }

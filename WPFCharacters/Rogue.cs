@@ -59,8 +59,6 @@ namespace WPFCharacters
                     _vit = _maxvit;
 
                 }
-                MaxHealth += 1;
-                MaxHealth -= 1;
                 addVital();
             }
         }
