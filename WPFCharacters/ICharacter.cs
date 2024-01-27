@@ -24,6 +24,19 @@ namespace WPFCharacters
         { get; set; }
         public int MaxMana
         { get; set; }
+        public int PDmg
+        { get; set; }
+        public int Armor
+        { get; set; }
+        public int MDmg
+        { get; set; }
+        public int MDef
+        { get; set; }
+        public int CrtChance
+        { get; set; }
+        public int CrtDmg
+        { get; set; }
+
 
         public void addVital(int points)
         {

@@ -20,14 +20,20 @@ namespace WPFCharacters
         private int _maxhealth;
         private int _mana;
         private int _maxmana;
+        private int _pdmg;
+        private int _armor;
+        private int _mdef;
+        private int _mdmg;
+        private int _crtchance;
+        private int _crtdmg;
         public Rogue()
         {
             Strength = 20;
             Dexterity = 30;
             Inteligence = 15;
             Vitality = 20;
-            Health = 30;
-            MaxHealth = 30;
+            Health = 40;
+            MaxHealth = 40;
         }
         public int Strength
         {
@@ -39,6 +45,7 @@ namespace WPFCharacters
                 {
                     Strength = _maxstr;
                 }
+                addVital();
             }
         }
         public int Vitality
@@ -52,19 +59,9 @@ namespace WPFCharacters
                     _vit = _maxvit;
 
                 }
-                int hp = 0;
-                double hpleft = 0;
-                for (int i = 0; i < _vit; i++)
-                {
-                    hp += 1;
-                    hpleft += 0.5;
-                    if (hpleft >= 1)
-                    {
-                        hp += 1;
-                        hpleft -= 1;
-                    }
-                }
-                MaxHealth = hp;
+                MaxHealth += 1;
+                MaxHealth -= 1;
+                addVital();
             }
         }
         public int Inteligence
@@ -149,9 +146,69 @@ namespace WPFCharacters
                     _maxmana = value;
             }
         }
-        public void addVital(int points)
+        public int PDmg
         {
-            Vitality += points;
+            get { return _pdmg; }
+            set { _pdmg = value; }
+        }
+        public int Armor
+        {
+            get { return _armor; }
+            set
+            {
+                _armor = value;
+            }
+        }
+        public int MDef
+        {
+            get { return _mdef; }
+            set
+            {
+                _mdef = value;
+            }
+        }
+        public int MDmg
+        {
+            get { return _mdmg; }
+            set { _mdmg = value; }
+        }
+        public int CrtChance
+        {
+            get { return _crtchance; }
+            set { _crtchance = value; }
+        }
+        public int CrtDmg
+        {
+            get { return _crtdmg; }
+            set
+            {
+                _crtdmg = value;
+            }
+        }
+        public void addVital()
+        {
+            int hp = 0;
+            double hpleft = 0;
+            for (int i = 0; i < _vit; i++)
+            {
+                hp += 1;
+                hpleft += 0.5;
+                if (hpleft >= 1)
+                {
+                    hp += 1;
+                    hpleft -= 1;
+                }
+            }
+            for (int i = 0; i < _str; i++)
+            {
+                hpleft += 0.5;
+                if (hpleft >= 1)
+                {
+                    hp += 1;
+                    hpleft -= 1;
+                }
+            }
+            MaxHealth = hp;
         }
     }
 }

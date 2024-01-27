@@ -20,6 +20,12 @@ namespace WPFCharacters
         private int _maxhealth;
         private int _mana;
         private int _maxmana;
+        private int _pdmg;
+        private int _armor;
+        private int _mdef;
+        private int _mdmg;
+        private int _crtchance;
+        private int _crtdmg;
         public Wizard()
         {
             Strength = 15;
@@ -147,6 +153,42 @@ namespace WPFCharacters
                 }
                 else
                     _maxmana = value;
+            }
+        }
+        public int PDmg
+        { 
+            get { return _pdmg; }
+            set { _pdmg = value; }
+        }
+        public int Armor
+        { get { return _armor; }
+            set 
+            {
+                _armor = value;    
+            } 
+        }
+        public int MDef
+        { get { return _mdef; }
+            set
+            {
+                _mdef  = value;
+            }
+        }  
+        public int MDmg
+        {
+            get { return _mdmg; }
+            set { _mdmg = value; }
+        }
+        public int CrtChance
+        {
+            get { return _crtchance; }
+            set { _crtchance = value; }
+        }
+        public int CrtDmg
+        { get { return _crtdmg; }
+            set
+            {
+                _crtdmg = value;
             }
         }
         public void addVital(int points)
