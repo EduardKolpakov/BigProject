@@ -8,7 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="props\" />
+    <None Remove="props\Rogue.jpg" />
+    <None Remove="props\Warrior.jpg" />
+    <None Remove="props\Wizard.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="props\Wizard.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="props\Rogue.jpg" />
+    <Resource Include="props\Warrior.jpg" />
   </ItemGroup>
 
 </Project>
