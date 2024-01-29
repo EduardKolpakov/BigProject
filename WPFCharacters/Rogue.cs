@@ -32,8 +32,7 @@ namespace WPFCharacters
             Dexterity = 30;
             Inteligence = 15;
             Vitality = 20;
-            Health = 40;
-            MaxHealth = 40;
+            addVital();
         }
         public int Strength
         {

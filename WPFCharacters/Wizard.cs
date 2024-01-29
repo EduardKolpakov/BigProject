@@ -32,8 +32,7 @@ namespace WPFCharacters
             Dexterity = 20;
             Inteligence = 35;
             Vitality = 15;
-            Health = 21;
-            MaxHealth = 21;
+            addVital();
         }
         public int Strength
         {
@@ -45,6 +44,7 @@ namespace WPFCharacters
                 {
                     Strength = _maxstr;
                 }
+                addVital();
             }
         }
         public int Vitality
@@ -58,19 +58,7 @@ namespace WPFCharacters
                     _vit = _maxvit;
 
                 }
-                int hp = 0;
-                double hpleft = 0;
-                for (int i = 0; i < _vit; i++)
-                {
-                    hp += 1;
-                    hpleft += 0.4;
-                    if (hpleft >= 1)
-                    {
-                        hp += 1;
-                        hpleft -= 1;
-                    }
-                }
-                MaxHealth = hp;
+                addVital();
             }
         }
         public int Inteligence
@@ -121,7 +109,7 @@ namespace WPFCharacters
             set
             {
                 if (Health == MaxHealth)
-                { 
+                {
                     _maxhealth = value;
                     _health = value;
                 }
@@ -191,9 +179,25 @@ namespace WPFCharacters
                 _crtdmg = value;
             }
         }
-        public void addVital(int points)
+        public void addVital()
         {
-            Vitality += points;
+            int hp = 0;
+            double hpleft = 0.01;
+            for (int i = 0; i < _vit; i++)
+            {
+                hp += 1;
+                hpleft += 0.4;
+            }
+            for (int i = 0; i < _str; i++)
+            {
+                hpleft += 0.2;
+                if (hpleft >= 1)
+                {
+                    hp += 1;
+                    hpleft -= 1;
+                }
+            }
+            MaxHealth = hp;
         }
     }
 }

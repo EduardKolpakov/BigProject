@@ -33,8 +33,7 @@ namespace WPFCharacters
                 Dexterity = 15;
                 Inteligence = 10;
                 Vitality = 25;
-                Health = 50;
-                MaxHealth = 50;
+                addVital();
             }
         public int Strength
         { 
@@ -42,6 +41,7 @@ namespace WPFCharacters
             set
             {
                 _str = value;
+                PDmg = value;
                 if (_str > _maxstr)
                 {
                     Strength = _maxstr;
@@ -70,14 +70,32 @@ namespace WPFCharacters
             {
                 _int = value;
                 int mp = 0;
+                int mdmg = 0;
+                double mdmg_b = 0;
+                int mdef = 0;
+                double mdef_b = 0;
                 if (_int > _maxint)
                 {
                     _int = _maxint;
                 }
                 for (int i = 0; i < _int; i++)
                 {
-                    mp += 1;
+                    mp++;
+                    mdmg_b += 0.2;
+                    mdef_b += 0.5;
+                    if (mdmg_b >= 1)
+                    {
+                        mdmg++;
+                        mdmg_b--;
+                    }
+                    if (mdef_b >= 1)
+                    {
+                        mdef++;
+                        mdef_b--;
+                    }
                 }
+                MDef = mdef;
+                MDmg = mdmg;
                 MaxMana = mp;
             }
         }
@@ -87,10 +105,32 @@ namespace WPFCharacters
             set
             {
                 _dex = value;
+                Armor = value;
+                int crtch = 0;
+                double crtch_b = 0;
+                int crtdmg = 0;
+                double crtdmg_b = 0;
                 if (_dex > _maxdex)
                 {
                     _dex = _maxdex;
                 }
+                for (int i = 0; i <= _dex; i++)
+                {
+                    crtch_b += 0.2;
+                    crtdmg_b += 0.1;
+                    if (crtch_b >= 1)
+                    {
+                        crtch++;
+                        crtch_b--;
+                    }
+                    if (crtdmg_b >= 1)
+                    {
+                        crtdmg++;
+                        crtdmg_b--;
+                    }
+                }
+                CrtChance = crtch;
+                CrtDmg = crtdmg;
             }
         }
         public int Health
@@ -186,7 +226,7 @@ namespace WPFCharacters
             }
             for (int i = 0; i < _str; i++)
             {
-                hp += 1;
+                hp++;
             }
             MaxHealth = hp;
         }

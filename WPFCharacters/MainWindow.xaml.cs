@@ -160,5 +160,20 @@ namespace WPFCharacters
         {
             statpoint.Visibility = Visibility.Hidden;
         }
+
+        private void phys_dmg_Initialized(object sender, EventArgs e)
+        {
+            phys_dmg.Visibility = Visibility.Hidden;
+        }
+
+        private void armor_Initialized(object sender, EventArgs e)
+        {
+            armor.Visibility = Visibility.Hidden;
+        }
+
+        private void mdmg_initialized(object sender, EventArgs e)
+        {
+            mdmg.Visibility = Visibility.Hidden;
+        }
     }
 }
