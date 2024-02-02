@@ -327,7 +327,7 @@ namespace WPFCharacters
         }
         private void pointsUpd()
         {
-            points.Content = $"points: {p}";
+            points.Content = $"Points: {p}";
         }
     }
 }
