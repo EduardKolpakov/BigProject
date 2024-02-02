@@ -35,21 +35,27 @@ namespace WPFCharacters
         private void class_select_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selected = class_select.SelectedValue.ToString();
-            class_select.Visibility = Visibility.Collapsed;
+            //class_select.Visibility = Visibility.Collapsed;
             classLabel.Content = $"Your character's class: {selected}";
             if (selected == "Rogue")
             {
                 rogueImg.Visibility = Visibility.Visible;
+                wizardImg.Visibility = Visibility.Hidden;
+                warriorImg.Visibility = Visibility.Hidden;
                 character = new Rogue();
             }
             else if (selected == "Warrior")
             {
                 warriorImg.Visibility = Visibility.Visible;
+                rogueImg.Visibility = Visibility.Hidden;
+                wizardImg.Visibility = Visibility.Hidden;
                 character = new Warrior();
             }
             else if (selected == "Wizard")
             {
                 wizardImg.Visibility = Visibility.Visible;
+                rogueImg.Visibility = Visibility.Hidden;
+                warriorImg.Visibility = Visibility.Hidden;
                 character = new Wizard();
             }
             curStr.Visibility = Visibility.Visible;
@@ -58,12 +64,24 @@ namespace WPFCharacters
             curInt.Visibility = Visibility.Visible;
             curHp.Visibility = Visibility.Visible;
             curMp.Visibility = Visibility.Visible;
+            phys_dmg.Visibility = Visibility.Visible;
+            armor.Visibility = Visibility.Visible;
+            mdmg.Visibility = Visibility.Visible;
+            mdef.Visibility = Visibility.Visible;
+            crtdmg.Visibility = Visibility.Visible;
+            crtchance.Visibility = Visibility.Visible;
             statsUpdate();
             plusInt.Visibility = Visibility.Visible;
             plusDex.Visibility = Visibility.Visible;
             plusStr.Visibility = Visibility.Visible;
             plusVit.Visibility = Visibility.Visible;
             statpoint.Visibility = Visibility.Visible;
+            minusStr.Visibility = Visibility.Visible;
+            minusVit.Visibility = Visibility.Visible;
+            minusDex.Visibility = Visibility.Visible;
+            minusInt.Visibility = Visibility.Visible;
+            points.Visibility = Visibility.Visible;
+            points_btn.Visibility = Visibility.Visible;
 
         }
 
@@ -124,35 +142,73 @@ namespace WPFCharacters
 
         private void plusStr_Click(object sender, RoutedEventArgs e)
         {
-            character.Strength += Convert.ToInt32(statpoint.Text);
+            if (p > 0)
+            {
+                int oldstat = character.Strength;
+                int dif;
+                character.Strength++;
+                dif = oldstat - character.Strength;
+                p += dif;
+                pointsUpd();
+            }
             statsUpdate();
             
         }
         public void statsUpdate()
         {
-            curStr.Content = $"Your character's strength is {character.Strength.ToString()}";
-            curVit.Content = $"Your character's vitality is {character.Vitality.ToString()}";
-            curDex.Content = $"Your character's dexterity is {character.Dexterity.ToString()}";
-            curInt.Content = $"Your character's Inteligence is {character.Inteligence.ToString()}";
+            curStr.Content = $"Your character's strength is {character.Strength}";
+            curVit.Content = $"Your character's vitality is {character.Vitality}";
+            curDex.Content = $"Your character's dexterity is {character.Dexterity}";
+            curInt.Content = $"Your character's Inteligence is {character.Inteligence}";
+            phys_dmg.Content = $"p.dmg: {character.PDmg}";
+            armor.Content = $"armor: {character.Armor}";
+            mdmg.Content = $"mdmg: {character.MDmg}";
+            mdef.Content = $"mdef: {character.MDef}";
+            crtchance.Content = $"Crt Chance: {character.CrtChance}";
+            crtdmg.Content = $"Crt dmg: {character.CrtDmg}";
             curHp.Content = $"HP: {character.Health}";
             curMp.Content = $"MP: {character.Mana}";
         }
 
         private void plusVit_Click(object sender, RoutedEventArgs e)
         {
-            character.Vitality += Convert.ToInt32(statpoint.Text);
+            if (p > 0)
+            {
+                int oldstat = character.Vitality;
+                int dif;
+                character.Vitality++;
+                dif = oldstat - character.Vitality;
+                p += dif;
+                pointsUpd();
+            }
             statsUpdate();
         }
 
         private void plusDex_Click(object sender, RoutedEventArgs e)
         {
-            character.Dexterity += Convert.ToInt32(statpoint.Text);
+            if (p > 0)
+            {
+                int oldstat = character.Dexterity;
+                int dif;
+                character.Dexterity++;
+                dif = oldstat - character.Dexterity;
+                p += dif;
+                pointsUpd();
+            }
             statsUpdate();
         }
 
         private void plusInt_Click(object sender, RoutedEventArgs e)
         {
-            character.Inteligence += Convert.ToInt32(statpoint.Text);
+            if (p > 0)
+            {
+                int oldstat = character.Inteligence;
+                int dif;
+                character.Inteligence++;
+                dif = oldstat - character.Inteligence;
+                p += dif;
+                pointsUpd();
+            }
             statsUpdate();
         }
 
@@ -174,6 +230,104 @@ namespace WPFCharacters
         private void mdmg_initialized(object sender, EventArgs e)
         {
             mdmg.Visibility = Visibility.Hidden;
+        }
+
+        private void mdef_initialized(object sender, EventArgs e)
+        {
+            mdef.Visibility = Visibility.Hidden;
+        }
+
+        private void crtch_initialized(object sender, EventArgs e)
+        {
+            crtchance.Visibility = Visibility.Hidden;
+        }
+
+        private void crtdmg_initialized(object sender, EventArgs e)
+        {
+            crtdmg.Visibility= Visibility.Hidden;
+        }
+
+        private void minusStr_initialized(object sender, EventArgs e)
+        {
+            minusStr.Visibility = Visibility.Hidden;
+        }
+
+        private void minusStr_click(object sender, RoutedEventArgs e)
+        {
+            int oldstat = character.Strength;
+            int diff;
+            character.Strength--;
+            diff = oldstat - character.Strength;
+            p += diff;
+            pointsUpd();
+            statsUpdate();
+        }
+
+        private void minusVit_click(object sender, RoutedEventArgs e)
+        {
+            int oldstat = character.Vitality;
+            int diff;
+            character.Vitality--;
+            diff = oldstat - character.Vitality;
+            p += diff;
+            pointsUpd();
+            statsUpdate();
+        }
+
+        private void MinusDex_click(object sender, RoutedEventArgs e)
+        {
+            int oldstat = character.Dexterity;
+            int diff;
+            character.Dexterity--;
+            diff = oldstat - character.Dexterity;
+            p += diff;
+            pointsUpd();
+            statsUpdate();
+        }
+
+        private void minusInt_click(object sender, RoutedEventArgs e)
+        {
+            int oldstat = character.Inteligence;
+            int diff;
+            character.Inteligence--;
+            diff = oldstat - character.Inteligence;
+            p += diff;
+            pointsUpd();
+            statsUpdate();
+        }
+
+        private void points_Initialized(object sender, EventArgs e)
+        {
+            points.Visibility = Visibility.Hidden;
+        }
+        private void points_btn_Initialized(object sender, EventArgs e)
+        {
+            points_btn.Visibility = Visibility.Hidden;
+        }
+
+        private void points_btn_Click(object sender, RoutedEventArgs e)
+        {
+            points.Content = $"Points: {statpoint.Text}";
+            p = Convert.ToInt32(statpoint.Text);
+        }
+
+        private void MinusVit_initialized(object sender, EventArgs e)
+        {
+            minusVit.Visibility = Visibility.Hidden;
+        }
+
+        private void minusDex_initialized(object sender, EventArgs e)
+        {
+            minusDex.Visibility = Visibility.Hidden;
+        }
+
+        private void minusInt_initialized(object sender, EventArgs e)
+        {
+            minusInt.Visibility = Visibility.Hidden;
+        }
+        private void pointsUpd()
+        {
+            points.Content = $"points: {p}";
         }
     }
 }

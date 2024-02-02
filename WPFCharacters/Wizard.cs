@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media.Animation;
 
 namespace WPFCharacters
 {
@@ -40,10 +41,24 @@ namespace WPFCharacters
             set
             {
                 _str = value;
+                double armb = 0;
+                int arm = 0;
                 if (_str > _maxstr)
                 {
                     Strength = _maxstr;
                 }
+                if (_str < 15)
+                    _str = 15;
+                for (int i = 0; i < _maxstr; i++)
+                {
+                    armb += 0.5;
+                    if (armb >= 1)
+                    {
+                        armb--;
+                        arm++;
+                    }
+                }
+                PDmg = arm;
                 addVital();
             }
         }
@@ -56,8 +71,9 @@ namespace WPFCharacters
                 if (_vit > _maxvit)
                 {
                     _vit = _maxvit;
-
                 }
+                if (_vit < 15)
+                    _vit = 15;
                 addVital();
             }
         }
@@ -73,6 +89,8 @@ namespace WPFCharacters
                 {
                     _int = _maxint;
                 }
+                if (_int < 35)
+                    _int = 35;
                 for (int i = 0; i < _int; i++)
                 {
                     mp += 1;
@@ -83,6 +101,8 @@ namespace WPFCharacters
                         manaleft -= 1;
                     }
                 }
+                MDmg = _int;
+                MDef = _int;
                 MaxMana = mp;
             }
         }
@@ -96,6 +116,30 @@ namespace WPFCharacters
                 {
                     _dex = _maxdex;
                 }
+                if (_dex < 20)
+                    _dex = 20;
+                double crtc = 0;
+                int crtch = 0;
+                double crtd = 0.000001;
+                int crtdm = 0;
+                for (int i = 0; i < _dex; i++)
+                {
+                    crtc += 0.2;
+                    crtd += 0.1;
+                    if (crtc >= 1)
+                    {
+                        crtc--;
+                        crtch++;
+                    }
+                    if (crtd >= 1)
+                    {
+                        crtdm++;
+                        crtd--;
+                    }
+                }
+                CrtChance = crtch;
+                CrtDmg = crtdm;
+                Armor = _dex;
             }
         }
         public int Health

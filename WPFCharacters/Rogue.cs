@@ -44,7 +44,10 @@ namespace WPFCharacters
                 {
                     Strength = _maxstr;
                 }
+                if (_str < 20)
+                    _str = 20;
                 addVital();
+                addPdmg();
             }
         }
         public int Vitality
@@ -56,8 +59,9 @@ namespace WPFCharacters
                 if (_vit > _maxvit)
                 {
                     _vit = _maxvit;
-
                 }
+                if (_vit < 20)
+                    _vit = 20;
                 addVital();
             }
         }
@@ -69,12 +73,20 @@ namespace WPFCharacters
                 _int = value;
                 double manaleft = 0;
                 int mp = 0;
+                double mdmgb = 0;
+                int mdmg = 0;
+                double mdefb = 0;
+                int mdef = 0;
                 if (_int > _maxint)
                 {
                     _int = _maxint;
                 }
+                if (_int < 15)
+                    _int = 15;
                 for (int i = 0; i < _int; i++)
                 {
+                    mdmgb += 0.2;
+                    mdefb += 0.5;
                     mp += 1;
                     manaleft += 0.2;
                     if (manaleft >= 1)
@@ -82,7 +94,19 @@ namespace WPFCharacters
                         mp += 1;
                         manaleft -= 1;
                     }
+                    if (mdefb >= 1)
+                    {
+                        mdef++;
+                        mdefb--;
+                    }
+                    if (mdmgb >= 1)
+                    {
+                        mdmg++;
+                        mdmgb--;
+                    }
                 }
+                MDmg = mdmg;
+                MDef = mdef;
                 MaxMana = mp;
             }
         }
@@ -92,10 +116,44 @@ namespace WPFCharacters
             set
             {
                 _dex = value;
+                double armorb = 0;
+                int arm = 0;
+                double crtc = 0;
+                int crtch = 0;
+                double crtd = 0.000001;
+                int crtdm = 0;
                 if (_dex > _maxdex)
                 {
                     _dex = _maxdex;
                 }
+                if (_dex < 30)
+                    _dex = 30;
+                for (int i = 0; i <_dex; i++)
+                {
+                    crtc += 0.2;
+                    crtd += 0.1;
+                    arm++;
+                    armorb += 0.5;
+                    if (armorb >= 1)
+                    {
+                        arm++;
+                        armorb--;
+                    }
+                    if (crtc >= 1)
+                    {
+                        crtc--;
+                        crtch++;
+                    }
+                    if (crtd >= 1)
+                    {
+                        crtdm++;
+                        crtd--;
+                    }
+                }
+                CrtChance = crtch;
+                CrtDmg = crtdm;
+                Armor = arm;
+                addPdmg();
             }
         }
         public int Health
@@ -181,6 +239,30 @@ namespace WPFCharacters
             {
                 _crtdmg = value;
             }
+        }
+        public void addPdmg()
+        {
+            double pdmgb = 0;
+            int pdmgc = 0;
+            for (int i = 0; i < Dexterity; i++) 
+            {
+                pdmgb += 0.5;
+                if (pdmgb >= 1)
+                {
+                    pdmgc++;
+                    pdmgb--;
+                }
+            }
+            for (int i = 0; i < Strength; i++)
+            {
+                pdmgb += 0.5;
+                if (pdmgb >= 1)
+                {
+                    pdmgc++;
+                    pdmgb--;
+                }
+            }
+            PDmg = pdmgc;
         }
         public void addVital()
         {

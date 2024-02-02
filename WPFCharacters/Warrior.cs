@@ -44,8 +44,10 @@ namespace WPFCharacters
                 PDmg = value;
                 if (_str > _maxstr)
                 {
-                    Strength = _maxstr;
+                    _str = _maxstr;
                 }
+                if (_str < 30)
+                    _str = 30;
                 addVital();
             }
         }
@@ -58,8 +60,9 @@ namespace WPFCharacters
                 if (_vit > _maxvit)
                 {
                     _vit = _maxvit;
-
                 }
+                if (_vit < 25)
+                    _vit = 25;
                 addVital();
             }
         }    
@@ -78,6 +81,8 @@ namespace WPFCharacters
                 {
                     _int = _maxint;
                 }
+                if (_int < 10)
+                    _int = 10;
                 for (int i = 0; i < _int; i++)
                 {
                     mp++;
@@ -105,7 +110,6 @@ namespace WPFCharacters
             set
             {
                 _dex = value;
-                Armor = value;
                 int crtch = 0;
                 double crtch_b = 0;
                 int crtdmg = 0;
@@ -114,6 +118,9 @@ namespace WPFCharacters
                 {
                     _dex = _maxdex;
                 }
+                if (_dex < 15)
+                    _dex = 15;
+                Armor = _dex;
                 for (int i = 0; i <= _dex; i++)
                 {
                     crtch_b += 0.2;

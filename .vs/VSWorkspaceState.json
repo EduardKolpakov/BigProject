@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\WPFCharacters"
   ],
-  "SelectedNode": "\\WPFCharacters.sln",
+  "SelectedNode": "\\WPFCharacters\\Warrior.cs",
   "PreviewInSolutionExplorer": false
 }

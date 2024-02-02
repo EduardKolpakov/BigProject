@@ -26,6 +26,15 @@
         <Label x:Name="phys_dmg" HorizontalAlignment="Left" Height="48" Margin="10,403,0,0" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="phys_dmg_Initialized"/>
         <Label x:Name="armor" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="armor_Initialized" Margin="170,403,0,0"/>
         <Label x:Name="mdmg" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="mdmg_initialized" Margin="10,456,0,0"/>
+        <Label x:Name="mdef" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="mdef_initialized" Margin="170,456,0,0"/>
+        <Label x:Name="crtchance" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="156" FontFamily="MV Boli" FontSize="18" Initialized="crtch_initialized" Margin="330,403,0,0"/>
+        <Label x:Name="crtdmg" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="crtdmg_initialized" Margin="330,456,0,0"/>
+        <Button x:Name="minusStr" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,177,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusStr_initialized" Click="minusStr_click"/>
+        <Button x:Name="minusVit" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,236,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="MinusVit_initialized" Click="minusVit_click"/>
+        <Button x:Name="minusDex" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,294,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusDex_initialized" Click="MinusDex_click"/>
+        <Button x:Name="minusInt" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,352,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusInt_initialized" Click="minusInt_click"/>
+        <Label x:Name="points" Content="Points:" HorizontalAlignment="Left" Height="58" Margin="555,122,0,0" VerticalAlignment="Top" Width="192" Initialized="points_Initialized"/>
+        <Button x:Name="points_btn" Content="Points&#xD;&#xA;" HorizontalAlignment="Left" Height="36" Margin="454,185,0,0" VerticalAlignment="Top" Width="78" Initialized="points_btn_Initialized" Click="points_btn_Click"/>
 
     </Grid>
 </Window>
