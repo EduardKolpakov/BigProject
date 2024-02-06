@@ -27,12 +27,16 @@ namespace WPFCharacters
         private int _mdmg;
         private int _crtchance;
         private int _crtdmg;
+        private int _lvl;
+        private int _exp;
+        private int _points;
         public Wizard()
         {
             Strength = 15;
             Dexterity = 20;
             Inteligence = 35;
             Vitality = 15;
+            exp = 0;
             addVital();
         }
         public int Strength
@@ -49,7 +53,7 @@ namespace WPFCharacters
                 }
                 if (_str < 15)
                     _str = 15;
-                for (int i = 0; i < _maxstr; i++)
+                for (int i = 0; i < _str; i++)
                 {
                     armb += 0.5;
                     if (armb >= 1)
@@ -223,6 +227,39 @@ namespace WPFCharacters
                 _crtdmg = value;
             }
         }
+        public int level
+        {
+            get { return _lvl; }
+            set
+            {
+                _lvl = value;
+            }
+        }
+        public int exp
+        {
+            get { return _exp; }
+            set
+            {
+                int oldlvl = level;
+                _exp = value;
+                level = _exp / 1000 + 1;
+                if (level - oldlvl > 0)
+                {
+                    points += 5;
+                }    
+            }
+        }
+        public int points
+        {
+            get { return _points; }
+            set
+            {
+                _points = value;
+                if (_points < 0 )
+                    _points = 0;
+            }
+        }
+        
         public void addVital()
         {
             int hp = 0;

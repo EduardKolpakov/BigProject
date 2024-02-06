@@ -26,12 +26,16 @@ namespace WPFCharacters
         private int _mdmg;
         private int _crtchance;
         private int _crtdmg;
+        private int _exp;
+        private int _lvl;
+        private int _points;
         public Rogue()
         {
             Strength = 20;
             Dexterity = 30;
             Inteligence = 15;
             Vitality = 20;
+            exp = 0;
             addVital();
         }
         public int Strength
@@ -263,6 +267,38 @@ namespace WPFCharacters
                 }
             }
             PDmg = pdmgc;
+        }
+        public int level
+        {
+            get { return _lvl; }
+            set
+            {
+                _lvl = value;
+            }
+        }
+        public int exp
+        {
+            get { return _exp; }
+            set
+            {
+                int oldlvl = level;
+                _exp = value;
+                level = _exp / 1000 + 1;
+                if (level - oldlvl > 0)
+                {
+                    points += 5;
+                }
+            }
+        }
+        public int points
+        {
+            get { return _points; }
+            set
+            {
+                _points = value;
+                if (_points < 0)
+                    _points = 0;
+            }
         }
         public void addVital()
         {

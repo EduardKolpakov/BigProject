@@ -36,8 +36,12 @@ namespace WPFCharacters
         { get; set; }
         public int CrtDmg
         { get; set; }
-
-
+        public int level
+        { get; set; }
+        public int exp
+        { get; set; }
+        public int points
+        { get; set; }
         public void addVital(int points)
         {
             Vitality += points;

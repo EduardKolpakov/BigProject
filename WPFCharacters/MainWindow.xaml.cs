@@ -18,7 +18,6 @@ namespace WPFCharacters
 {
     public partial class MainWindow : Window
     {
-        int p;
         ICharacter character;
         public MainWindow()
         {
@@ -75,13 +74,19 @@ namespace WPFCharacters
             plusDex.Visibility = Visibility.Visible;
             plusStr.Visibility = Visibility.Visible;
             plusVit.Visibility = Visibility.Visible;
-            statpoint.Visibility = Visibility.Visible;
+            lvl_label.Visibility = Visibility.Visible;
             minusStr.Visibility = Visibility.Visible;
             minusVit.Visibility = Visibility.Visible;
             minusDex.Visibility = Visibility.Visible;
             minusInt.Visibility = Visibility.Visible;
             points.Visibility = Visibility.Visible;
             points_btn.Visibility = Visibility.Visible;
+            points_btn1.Visibility = Visibility.Visible;
+            points_btn2.Visibility = Visibility.Visible;
+            exp_label.Visibility = Visibility.Visible;
+            lvlupd();
+            expupd();
+            pointsUpd();
 
         }
 
@@ -142,13 +147,13 @@ namespace WPFCharacters
 
         private void plusStr_Click(object sender, RoutedEventArgs e)
         {
-            if (p > 0)
+            if (character.points > 0)
             {
                 int oldstat = character.Strength;
                 int dif;
                 character.Strength++;
                 dif = oldstat - character.Strength;
-                p += dif;
+                character.points += dif;
                 pointsUpd();
             }
             statsUpdate();
@@ -172,13 +177,13 @@ namespace WPFCharacters
 
         private void plusVit_Click(object sender, RoutedEventArgs e)
         {
-            if (p > 0)
+            if (character.points > 0)
             {
                 int oldstat = character.Vitality;
                 int dif;
                 character.Vitality++;
                 dif = oldstat - character.Vitality;
-                p += dif;
+                character.points += dif;
                 pointsUpd();
             }
             statsUpdate();
@@ -186,13 +191,13 @@ namespace WPFCharacters
 
         private void plusDex_Click(object sender, RoutedEventArgs e)
         {
-            if (p > 0)
+            if (character.points > 0)
             {
                 int oldstat = character.Dexterity;
                 int dif;
                 character.Dexterity++;
                 dif = oldstat - character.Dexterity;
-                p += dif;
+                character.points += dif;
                 pointsUpd();
             }
             statsUpdate();
@@ -200,21 +205,16 @@ namespace WPFCharacters
 
         private void plusInt_Click(object sender, RoutedEventArgs e)
         {
-            if (p > 0)
+            if (character.points > 0)
             {
                 int oldstat = character.Inteligence;
                 int dif;
                 character.Inteligence++;
                 dif = oldstat - character.Inteligence;
-                p += dif;
+                character.points += dif;
                 pointsUpd();
             }
             statsUpdate();
-        }
-
-        private void statpoint_Initialized(object sender, EventArgs e)
-        {
-            statpoint.Visibility = Visibility.Hidden;
         }
 
         private void phys_dmg_Initialized(object sender, EventArgs e)
@@ -258,7 +258,7 @@ namespace WPFCharacters
             int diff;
             character.Strength--;
             diff = oldstat - character.Strength;
-            p += diff;
+            character.points += diff;
             pointsUpd();
             statsUpdate();
         }
@@ -269,7 +269,7 @@ namespace WPFCharacters
             int diff;
             character.Vitality--;
             diff = oldstat - character.Vitality;
-            p += diff;
+            character.points += diff;
             pointsUpd();
             statsUpdate();
         }
@@ -280,7 +280,7 @@ namespace WPFCharacters
             int diff;
             character.Dexterity--;
             diff = oldstat - character.Dexterity;
-            p += diff;
+            character.points += diff;
             pointsUpd();
             statsUpdate();
         }
@@ -291,7 +291,7 @@ namespace WPFCharacters
             int diff;
             character.Inteligence--;
             diff = oldstat - character.Inteligence;
-            p += diff;
+            character.points += diff;
             pointsUpd();
             statsUpdate();
         }
@@ -307,8 +307,10 @@ namespace WPFCharacters
 
         private void points_btn_Click(object sender, RoutedEventArgs e)
         {
-            points.Content = $"Points: {statpoint.Text}";
-            p = Convert.ToInt32(statpoint.Text);
+            character.exp += 100;
+            lvlupd();
+            expupd();
+            pointsUpd();
         }
 
         private void MinusVit_initialized(object sender, EventArgs e)
@@ -327,7 +329,51 @@ namespace WPFCharacters
         }
         private void pointsUpd()
         {
-            points.Content = $"Points: {p}";
+            points.Content = $"Points: {character.points}";
+        }
+
+        private void points_btn2_Click(object sender, RoutedEventArgs e)
+        {
+            character.exp += 1000;
+            lvlupd();
+            expupd();
+            pointsUpd();
+        }
+
+        private void points_btn1_Click(object sender, RoutedEventArgs e)
+        {
+            character.exp += 500;
+            lvlupd();
+            expupd();
+            pointsUpd();
+        }
+
+        private void lvl_label_Initialized(object sender, EventArgs e)
+        {
+            lvl_label.Visibility = Visibility.Hidden;
+        }
+
+        private void points_btn1_Initialized(object sender, EventArgs e)
+        {
+            points_btn1.Visibility = Visibility.Hidden;
+        }
+
+        private void points_btn2_Initialized(object sender, EventArgs e)
+        {
+            points_btn2.Visibility = Visibility.Hidden;
+        }
+        private void lvlupd()
+        {
+            lvl_label.Content = $"Level: {character.level}";
+        }
+
+        private void exp_label_Initialized(object sender, EventArgs e)
+        {
+            exp_label.Visibility = Visibility.Hidden;
+        }
+        private void expupd()
+        {
+            exp_label.Content = $"exp: {character.exp}";
         }
     }
 }
