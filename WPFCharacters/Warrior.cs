@@ -30,6 +30,8 @@ namespace WPFCharacters
         private int _exp;
         private int _lvl;
         private int _points;
+        private int IntTest;
+        private double IntTest2;
         public Warrior() 
             {
                 Strength = 30;
@@ -260,6 +262,10 @@ namespace WPFCharacters
                     _points = 0;
             }
         }
+        public int it
+        { get {return IntTest; } set {IntTest = value; } }
+        public double it2
+        { get { return IntTest2; } set{IntTest2 = value; } }
         public void addVital()
         {
             int hp = 0;
@@ -273,5 +279,7 @@ namespace WPFCharacters
             }
             MaxHealth = hp;
         }
+        public void StatsCals()
+        { }
     }
 }

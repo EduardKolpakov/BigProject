@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace WPFCharacters
 {
@@ -42,9 +43,15 @@ namespace WPFCharacters
         { get; set; }
         public int points
         { get; set; }
+        public int it
+        { get; set; }
+        public double it2
+        { get; set; }
         public void addVital(int points)
         {
             Vitality += points;
         }
+        public void StatsCalc()
+        { }
     }
 }

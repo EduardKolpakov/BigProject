@@ -343,6 +343,8 @@ namespace WPFCharacters
         private void points_btn1_Click(object sender, RoutedEventArgs e)
         {
             character.exp += 500;
+            character.StatsCalc();
+            Test.Content = $"HP: {character.it} HP (raw): {character.it2}";
             lvlupd();
             expupd();
             pointsUpd();
@@ -374,6 +376,11 @@ namespace WPFCharacters
         private void expupd()
         {
             exp_label.Content = $"exp: {character.exp}";
+        }
+
+        private void Test_Loaded(object sender, RoutedEventArgs e)
+        {
+            Test.Content = "Hi";
         }
     }
 }

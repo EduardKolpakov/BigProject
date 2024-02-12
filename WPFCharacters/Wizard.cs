@@ -30,6 +30,8 @@ namespace WPFCharacters
         private int _lvl;
         private int _exp;
         private int _points;
+        private int IntTest = 0;
+        private double IntTest2 = 0;
         public Wizard()
         {
             Strength = 15;
@@ -259,7 +261,16 @@ namespace WPFCharacters
                     _points = 0;
             }
         }
-        
+        public int it
+        {
+            get {return IntTest; }
+            set {it = value; }
+        }
+        public double it2
+        {
+            get { return IntTest2; }
+            set { IntTest2 = value; }
+        }
         public void addVital()
         {
             int hp = 0;
@@ -279,6 +290,14 @@ namespace WPFCharacters
                 }
             }
             MaxHealth = hp;
+        }
+        public void StatsCalc()
+        {
+            int vit = Vitality;
+            double hp_full = vit * 1.4;
+            int hpr = (int)Math.Round(hp_full);
+            it = hpr;
+            it2 = hp_full;
         }
     }
 }

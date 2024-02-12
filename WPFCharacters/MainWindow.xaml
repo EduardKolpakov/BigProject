@@ -38,6 +38,7 @@
         <Button x:Name="points_btn1" Content="+500&#xA;" HorizontalAlignment="Left" Height="36" Margin="608,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn1_Initialized" Click="points_btn1_Click"/>
         <Button x:Name="points_btn2" Content="+1000&#xA;" HorizontalAlignment="Left" Height="36" Margin="661,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn2_Initialized" Click="points_btn2_Click"/>
         <Label x:Name="exp_label" Content="exp:" HorizontalAlignment="Left" Height="48" Margin="656,122,0,0" VerticalAlignment="Top" Width="147" Initialized="exp_label_Initialized"/>
+        <Label x:Name="Test" Content="Label" HorizontalAlignment="Left" Height="122" Margin="555,252,0,0" VerticalAlignment="Top" Width="192" Loaded="Test_Loaded"/>
 
     </Grid>
 </Window>
