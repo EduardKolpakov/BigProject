@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WPFCharacters")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acc9acc26f9ee873177f918998aab3fe69b5293c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c09a30aaa646e741e732f2d8fea7ed75e02a5442")]
 [assembly: System.Reflection.AssemblyProductAttribute("WPFCharacters")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WPFCharacters")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
