@@ -132,7 +132,6 @@ namespace WPFCharacters
                 }
                 CrtChance = crtch;
                 CrtDmg = crtdm;
-                Armor = _dex;
             }
         }
         public int Health
@@ -267,7 +266,7 @@ namespace WPFCharacters
             int pdm = (int)Math.Floor(pdmb);
             PDmg = pdm;
             int arm = _dex;
-            it = arm;
+            Armor = arm;
         }
     }
 }
