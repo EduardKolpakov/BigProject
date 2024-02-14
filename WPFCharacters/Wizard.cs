@@ -54,16 +54,6 @@ namespace WPFCharacters
                 }
                 if (_str < 15)
                     _str = 15;
-                for (int i = 0; i < _str; i++)
-                {
-                    armb += 0.5;
-                    if (armb >= 1)
-                    {
-                        armb--;
-                        arm++;
-                    }
-                }
-                PDmg = arm;
             }
         }
         public int Vitality
@@ -273,10 +263,11 @@ namespace WPFCharacters
             double hp_full = Vitality * 1.4 + Strength * 0.2 + 0.00000001;
             int hpr = (int)Math.Floor(hp_full);
             MaxHealth = hpr;
-            double armb = Strength * 0.5;
-            int arm = (int)Math.Floor(armb);
+            double pdmb = Strength * 0.5;
+            int pdm = (int)Math.Floor(pdmb);
+            PDmg = pdm;
+            int arm = _dex;
             it = arm;
-            it2 = armb;
         }
     }
 }

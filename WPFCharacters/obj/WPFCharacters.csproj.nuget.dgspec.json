@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\202215\\source\\repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj": {}
+    "C:\\Users\\202215\\Source\\Repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\202215\\source\\repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj": {
+    "C:\\Users\\202215\\Source\\Repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\202215\\source\\repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj",
+        "projectUniqueName": "C:\\Users\\202215\\Source\\Repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj",
         "projectName": "WPFCharacters",
-        "projectPath": "C:\\Users\\202215\\source\\repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj",
+        "projectPath": "C:\\Users\\202215\\Source\\Repos\\EduardKolpakov\\BigProject\\WPFCharacters\\WPFCharacters.csproj",
         "packagesPath": "C:\\Users\\202215\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\202215\\source\\repos\\EduardKolpakov\\BigProject\\WPFCharacters\\obj\\",
+        "outputPath": "C:\\Users\\202215\\Source\\Repos\\EduardKolpakov\\BigProject\\WPFCharacters\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
