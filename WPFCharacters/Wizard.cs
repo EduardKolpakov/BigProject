@@ -39,7 +39,6 @@ namespace WPFCharacters
             Inteligence = 35;
             Vitality = 15;
             exp = 0;
-            addVital();
         }
         public int Strength
         {
@@ -65,7 +64,6 @@ namespace WPFCharacters
                     }
                 }
                 PDmg = arm;
-                addVital();
             }
         }
         public int Vitality
@@ -80,7 +78,6 @@ namespace WPFCharacters
                 }
                 if (_vit < 15)
                     _vit = 15;
-                addVital();
             }
         }
         public int Inteligence
@@ -264,40 +261,22 @@ namespace WPFCharacters
         public int it
         {
             get {return IntTest; }
-            set {it = value; }
+            set {IntTest = value; }
         }
         public double it2
         {
             get { return IntTest2; }
             set { IntTest2 = value; }
         }
-        public void addVital()
-        {
-            int hp = 0;
-            double hpleft = 0.01;
-            for (int i = 0; i < _vit; i++)
-            {
-                hp += 1;
-                hpleft += 0.4;
-            }
-            for (int i = 0; i < _str; i++)
-            {
-                hpleft += 0.2;
-                if (hpleft >= 1)
-                {
-                    hp += 1;
-                    hpleft -= 1;
-                }
-            }
-            MaxHealth = hp;
-        }
         public void StatsCalc()
         {
-            int vit = Vitality;
-            double hp_full = vit * 1.4;
-            int hpr = (int)Math.Round(hp_full);
-            it = hpr;
-            it2 = hp_full;
+            double hp_full = Vitality * 1.4 + Strength * 0.2 + 0.00000001;
+            int hpr = (int)Math.Floor(hp_full);
+            MaxHealth = hpr;
+            double armb = Strength * 0.5;
+            int arm = (int)Math.Floor(armb);
+            it = arm;
+            it2 = armb;
         }
     }
 }

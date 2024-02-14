@@ -161,6 +161,8 @@ namespace WPFCharacters
         }
         public void statsUpdate()
         {
+            character.StatsCalc();
+            Test.Content = $"test int: {character.it}\ntest int(raw): {character.it2}";
             curStr.Content = $"Your character's strength is {character.Strength}";
             curVit.Content = $"Your character's vitality is {character.Vitality}";
             curDex.Content = $"Your character's dexterity is {character.Dexterity}";
@@ -343,8 +345,6 @@ namespace WPFCharacters
         private void points_btn1_Click(object sender, RoutedEventArgs e)
         {
             character.exp += 500;
-            character.StatsCalc();
-            Test.Content = $"HP: {character.it} HP (raw): {character.it2}";
             lvlupd();
             expupd();
             pointsUpd();

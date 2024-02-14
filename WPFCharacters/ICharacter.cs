@@ -47,10 +47,6 @@ namespace WPFCharacters
         { get; set; }
         public double it2
         { get; set; }
-        public void addVital(int points)
-        {
-            Vitality += points;
-        }
         public void StatsCalc()
         { }
     }
