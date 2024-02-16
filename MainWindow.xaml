@@ -9,9 +9,9 @@
     <Grid>
         <ComboBox x:Name="class_select" Margin="320,26,996,778" Initialized="ComboBox_Initialized" SelectionChanged="class_select_SelectionChanged"/>
         <Label x:Name="classLabel" Content="Choose the class for your character" HorizontalAlignment="Left" Height="45" Margin="0,24,0,0" VerticalAlignment="Top" Width="320" BorderBrush="Black" FontFamily="MV Boli" FontSize="16"/>
-        <Image x:Name="wizardImg" HorizontalAlignment="Left" Height="600" Margin="1030,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Wizard.jpg" Initialized="wizardImg_Initialized"/>
-        <Image x:Name="warriorImg" HorizontalAlignment="Left" Height="600" Margin="870,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Warrior.jpg" Visibility="Hidden"/>
-        <Image x:Name="rogueImg" HorizontalAlignment="Left" Height="600" Margin="870,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Rogue.jpg" Visibility="Hidden"/>
+        <Image x:Name="wizardImg" HorizontalAlignment="Left" Height="600" Margin="1030,10,0,0" VerticalAlignment="Top" Width="400" Source="/props/Wizard.jpg" Initialized="wizardImg_Initialized"/>
+        <Image x:Name="warriorImg" HorizontalAlignment="Left" Height="600" Margin="1030,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Warrior.jpg" Visibility="Hidden"/>
+        <Image x:Name="rogueImg" HorizontalAlignment="Left" Height="600" Margin="1030,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Rogue.jpg" Visibility="Hidden"/>
         <Label x:Name="curStr" Content="" HorizontalAlignment="Left" Height="48" Margin="10,175,0,0" VerticalAlignment="Top" Width="426" FontFamily="MV Boli" FontSize="18" Initialized="curStr_Initialized"/>
         <Label x:Name="curVit" HorizontalAlignment="Left" Height="48" Margin="10,234,0,0" VerticalAlignment="Top" Width="426" FontFamily="MV Boli" FontSize="18" Initialized="curVit_Initialized"/>
         <Label x:Name="curDex" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="426" FontFamily="MV Boli" FontSize="18" Initialized="curDex_Initialized" Margin="10,292,0,0"/>

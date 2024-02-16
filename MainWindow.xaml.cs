@@ -150,10 +150,10 @@ namespace WPFCharacters
         {
             if (character.points > 0)
             {
-                int oldstat = character.Strength;
+                int oldstat = character.TStr;
                 int dif;
-                character.Strength++;
-                dif = oldstat - character.Strength;
+                character.TStr++;
+                dif = oldstat - character.TStr;
                 character.points += dif;
                 pointsUpd();
             }
@@ -195,10 +195,10 @@ namespace WPFCharacters
         {
             if (character.points > 0)
             {
-                int oldstat = character.Dexterity;
+                int oldstat = character.TDex;
                 int dif;
-                character.Dexterity++;
-                dif = oldstat - character.Dexterity;
+                character.TDex++;
+                dif = oldstat - character.TDex;
                 character.points += dif;
                 pointsUpd();
             }
@@ -256,10 +256,10 @@ namespace WPFCharacters
 
         private void minusStr_click(object sender, RoutedEventArgs e)
         {
-            int oldstat = character.Strength;
+            int oldstat = character.TStr;
             int diff;
-            character.Strength--;
-            diff = oldstat - character.Strength;
+            character.TStr--;
+            diff = oldstat - character.TStr;
             character.points += diff;
             pointsUpd();
             statsUpdate();
@@ -278,10 +278,10 @@ namespace WPFCharacters
 
         private void MinusDex_click(object sender, RoutedEventArgs e)
         {
-            int oldstat = character.Dexterity;
+            int oldstat = character.TDex;
             int diff;
-            character.Dexterity--;
-            diff = oldstat - character.Dexterity;
+            character.TDex--;
+            diff = oldstat - character.TDex;
             character.points += diff;
             pointsUpd();
             statsUpdate();
@@ -289,10 +289,10 @@ namespace WPFCharacters
 
         private void minusInt_click(object sender, RoutedEventArgs e)
         {
-            int oldstat = character.Inteligence;
+            int oldstat = character.TInt;
             int diff;
-            character.Inteligence--;
-            diff = oldstat - character.Inteligence;
+            character.TInt--;
+            diff = oldstat - character.TInt;
             character.points += diff;
             pointsUpd();
             statsUpdate();
@@ -385,6 +385,21 @@ namespace WPFCharacters
             Weapon.Items.Add("Common staff");
             Weapon.Items.Add("Enchanted staff");
             Weapon.Items.Add("Rare staff");
+            Weapon.Items.Add("Common dagger");
+            Weapon.Items.Add("Enchanted dagger");
+            Weapon.Items.Add("Rare dagger");
+            Weapon.Items.Add("Common sword");
+            Weapon.Items.Add("Enchanted sword");
+            Weapon.Items.Add("Rare sword");
+            Weapon.Items.Add("Common axe");
+            Weapon.Items.Add("Enchanted axe");
+            Weapon.Items.Add("Rare axe");
+            Weapon.Items.Add("Common mace");
+            Weapon.Items.Add("Enchanted mace");
+            Weapon.Items.Add("Rare mace");
+            Weapon.Items.Add("Common spear");
+            Weapon.Items.Add("Enchanted spear");
+            Weapon.Items.Add("Rare spear");
         }
 
         private void Weapon_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -410,6 +425,81 @@ namespace WPFCharacters
                 case "Rare staff":
                     {
                         character.weapon = new Staff("rare");
+                        break;
+                    }
+                case "Common dagger":
+                    {
+                        character.weapon = new Dagger("common");
+                        break;
+                    }
+                case "Enchanted dagger":
+                    {
+                        character.weapon = new Dagger("enchanted");
+                        break;
+                    }
+                case "Rare Dagger":
+                    {
+                        character.weapon = new Dagger("rare");
+                        break;
+                    }
+                case "Common sword":
+                    {
+                        character.weapon = new Sword("common");
+                        break;
+                    }
+                case "Enchanted sword":
+                    {
+                        character.weapon = new Sword("enchanted");
+                        break;
+                    }
+                case "Rare sword":
+                    {
+                        character.weapon = new Sword("rare");
+                        break;
+                    }
+                case "Common axe":
+                    {
+                        character.weapon = new Axe("common");
+                        break;
+                    }
+                case "Enchanted axe":
+                    {
+                        character.weapon = new Axe("enchanted");
+                        break;
+                    }
+                case "Rare axe":
+                    {
+                        character.weapon = new Axe("rare");
+                        break;
+                    }
+                case "Common mace":
+                    {
+                        character.weapon = new Mace("common");
+                        break;
+                    }
+                case "Enchanted mace":
+                    {
+                        character.weapon = new Mace("enchanted");
+                        break;
+                    }
+                case "Rare mace":
+                    {
+                        character.weapon = new Mace("rare");
+                        break;
+                    }
+                case "Common spear":
+                    {
+                        character.weapon = new Spear("common");
+                        break;
+                    }
+                case "Enchanted spear":
+                    {
+                        character.weapon = new Spear("enchanted");
+                        break;
+                    }
+                case "Rare spear":
+                    {
+                        character.weapon = new Spear("rare");
                         break;
                     }
             }

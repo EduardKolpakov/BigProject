@@ -49,14 +49,7 @@ namespace WPFCharacters
             get { return _str; }
             set
             {
-                tStr = value;
-                if (tStr > _maxstr)
-                {
-                    Strength = _maxstr;
-                }
-                if (tStr < 20)
-                    tStr = 20;
-                _str = (int)Math.Floor(tStr * weapon.Str_b);
+                _str = value;
             }
         }
         public int Vitality
@@ -78,14 +71,7 @@ namespace WPFCharacters
             get { return _int; }
             set
             {
-                tInt = value;
-                if (tInt > _maxint)
-                {
-                    tInt = _maxint;
-                }
-                if (tInt < 15)
-                    tInt = 15;
-                _int = (int)Math.Floor(tInt * weapon.Int_b);
+                _int = value;
             }
         }
         public int Dexterity
@@ -93,14 +79,8 @@ namespace WPFCharacters
             get { return _dex; }
             set
             {
-                tDex = value;
-                if (tDex > _maxdex)
-                {
-                    tDex = _maxdex;
-                }
-                if (tDex < 30)
-                    tDex = 30;
-                _dex = (int)Math.Floor(tDex * weapon.Dex_b);
+                _dex = value;
+
             }
         }
         public int Health
@@ -232,17 +212,47 @@ namespace WPFCharacters
         public int TStr
         {
             get { return tStr; }
-            set { tStr = value; }
+            set
+            {
+                tStr = value;
+                if (tStr > _maxstr)
+                {
+                    Strength = _maxstr;
+                }
+                if (tStr < 20)
+                    tStr = 20;
+                Strength = (int)Math.Floor(tStr * weapon.Str_b);
+            }
         }
         public int TInt
         {
             get { return tInt; }
-            set { tInt = value; }
+            set
+            { 
+                tInt = value;
+                if (tInt > _maxint)
+                {
+                    tInt = _maxint;
+                }
+                if (tInt < 15)
+                    tInt = 15;
+                Inteligence = (int)Math.Floor(tInt * weapon.Int_b);
+            }
         }
         public int TDex
         {
             get { return tDex; }
-            set { tDex = value; }
+            set
+            { 
+                tDex = value;
+                if (tDex > _maxdex)
+                {
+                    tDex = _maxdex;
+                }
+                if (tDex < 30)
+                    tDex = 30;
+                Dexterity = (int)Math.Floor(tDex * weapon.Dex_b);
+            }
         }
         public IWeapon weapon
         {

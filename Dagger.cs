@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Documents;
 
 namespace WPFCharacters
 {
-    internal class Staff : IWeapon
+    internal class Dagger : IWeapon
     {
         private string _qual;
         private string _name;
@@ -20,10 +19,10 @@ namespace WPFCharacters
         private double _dex_b;
         private bool _shield;
         private double _hp_b;
-        public Staff(string qual)
+        public Dagger(string qual)
         {
             Quality = qual;
-            Name = "Staff";
+            Name = "Dagger";
         }
 
         public string Quality
@@ -36,12 +35,12 @@ namespace WPFCharacters
                 {
                     case "common":
                         {
-                            PDmg_b = 1.05;
-                            Mana_b = 1.5;
-                            Int_b = 1.2;
-                            CC_b = 5;
-                            CD_b = 300;
-                            Dex_b = 1;
+                            PDmg_b = 1.15;
+                            Mana_b = 1;
+                            Int_b = 1;
+                            CC_b = 60;
+                            CD_b = 70;
+                            Dex_b = 1.5;
                             hp_b = 1;
                             Str_b = 1;
                             Shield = false;
@@ -49,12 +48,12 @@ namespace WPFCharacters
                         }
                     case "enchanted":
                         {
-                            PDmg_b = 1.1;
-                            Mana_b = 2;
-                            Int_b = 1.4;
-                            CC_b = 5;
-                            CD_b = 300;
-                            Dex_b = 1;
+                            PDmg_b = 1.3;
+                            Mana_b = 1;
+                            Int_b = 1;
+                            CC_b = 60;
+                            CD_b = 70;
+                            Dex_b = 2;
                             hp_b = 1;
                             Str_b = 1;
                             Shield = false;
@@ -62,12 +61,12 @@ namespace WPFCharacters
                         }
                     case "rare":
                         {
-                            PDmg_b = 1.15;
-                            Mana_b = 2.5;
-                            Int_b = 1.6;
-                            CC_b = 5;
-                            CD_b = 300;
-                            Dex_b = 1;
+                            PDmg_b = 1.45;
+                            Mana_b = 1;
+                            Int_b = 1;
+                            CC_b = 60;
+                            CD_b = 70;
+                            Dex_b = 2.5;
                             hp_b = 1;
                             Str_b = 1;
                             Shield = false;
@@ -93,7 +92,7 @@ namespace WPFCharacters
         }
         public double Int_b
         {
-            get {return _int_b; }
+            get { return _int_b; }
             set { _int_b = value; }
         }
         public int CC_b
@@ -101,7 +100,7 @@ namespace WPFCharacters
             get { return _cc_b; }
             set { _cc_b = value; }
         }
-        public int CD_b 
+        public int CD_b
         {
             get { return _cd_b; }
             set { _cd_b = value; }
@@ -111,7 +110,7 @@ namespace WPFCharacters
             get { return _str_b; }
             set { _str_b = value; }
         }
-        public double Dex_b 
+        public double Dex_b
         {
             get { return _dex_b; }
             set { _dex_b = value; }
