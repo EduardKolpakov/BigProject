@@ -12,23 +12,23 @@ namespace WPFCharacters
         { get; set; }
         public string Name
         { get; set; }
-        public int PDmg_b
+        public double PDmg_b
         { get; set; }
-        public int Mana_b
+        public double Mana_b
         { get; set; }
-        public int Int_b
+        public double Int_b
         { get; set; }
         public int CC_b
         { get; set; }
         public int CD_b
         { get; set; }
-        public int Str_b
+        public double Str_b
         { get; set; }
-        public int Dex_b
+        public double Dex_b
         { get; set; }
         public bool Shield
         { get; set; }
-        public int hp_b
+        public double hp_b
         { get; set; }
     }
 }
