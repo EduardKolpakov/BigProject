@@ -29,8 +29,6 @@ namespace WPFCharacters
         private int _exp;
         private int _lvl;
         private int _points;
-        private int IntTest;
-        private double IntTest2;
         private int tStr;
         private int tDex;
         private int tInt;
@@ -198,16 +196,6 @@ namespace WPFCharacters
                 if (_points < 0)
                     _points = 0;
             }
-        }
-        public int it
-        {
-            get { return IntTest; }
-            set { IntTest = value; }
-        }
-        public double it2
-        {
-            get { return IntTest2; }
-            set { IntTest2 = value; }
         }
         public int TStr
         {

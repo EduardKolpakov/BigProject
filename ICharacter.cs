@@ -43,10 +43,6 @@ namespace WPFCharacters
         { get; set; }
         public int points
         { get; set; }
-        public int it
-        { get; set; }
-        public double it2
-        { get; set; }
         public int TStr
         { get; set; }
         public int TDex

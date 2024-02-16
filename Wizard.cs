@@ -27,8 +27,6 @@ namespace WPFCharacters
         private int _lvl;
         private int _exp;
         private int _points;
-        private int IntTest = 0;
-        private double IntTest2 = 0;
         private IWeapon _weap = new NoWeapon();
         private int _maxstr = 45;
         private int _maxvit = 70;
@@ -195,16 +193,6 @@ namespace WPFCharacters
                 if (_points < 0 )
                     _points = 0;
             }
-        }
-        public int it
-        {
-            get {return IntTest; }
-            set {IntTest = value; }
-        }
-        public double it2
-        {
-            get { return IntTest2; }
-            set { IntTest2 = value; }
         }
         public int TStr
         {
