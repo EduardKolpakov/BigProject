@@ -5,40 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFCharacters"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" Background="DarkGray">
+        Title="MainWindow" Height="880" Width="1440" Background="DarkGray">
     <Grid>
-        <ComboBox x:Name="class_select" Margin="326,24,794,619" Initialized="ComboBox_Initialized" SelectionChanged="class_select_SelectionChanged" Width="160"/>
+        <ComboBox x:Name="class_select" Margin="320,26,996,778" Initialized="ComboBox_Initialized" SelectionChanged="class_select_SelectionChanged"/>
         <Label x:Name="classLabel" Content="Choose the class for your character" HorizontalAlignment="Left" Height="45" Margin="0,24,0,0" VerticalAlignment="Top" Width="320" BorderBrush="Black" FontFamily="MV Boli" FontSize="16"/>
-        <Image x:Name="wizardImg" HorizontalAlignment="Left" Height="600" Margin="872,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Wizard.jpg" Initialized="wizardImg_Initialized"/>
+        <Image x:Name="wizardImg" HorizontalAlignment="Left" Height="600" Margin="1030,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Wizard.jpg" Initialized="wizardImg_Initialized"/>
         <Image x:Name="warriorImg" HorizontalAlignment="Left" Height="600" Margin="870,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Warrior.jpg" Visibility="Hidden"/>
         <Image x:Name="rogueImg" HorizontalAlignment="Left" Height="600" Margin="870,24,0,0" VerticalAlignment="Top" Width="400" Source="/props/Rogue.jpg" Visibility="Hidden"/>
-        <Label x:Name="curStr" Content="" HorizontalAlignment="Left" Height="48" Margin="10,175,0,0" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curStr_Initialized"/>
-        <Label x:Name="curVit" HorizontalAlignment="Left" Height="48" Margin="10,234,0,0" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curVit_Initialized"/>
-        <Label x:Name="curDex" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curDex_Initialized" Margin="10,292,0,0"/>
-        <Label x:Name="curInt" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="310" FontFamily="MV Boli" FontSize="18" Initialized="curInt_Initialized" Margin="10,350,0,0"/>
+        <Label x:Name="curStr" Content="" HorizontalAlignment="Left" Height="48" Margin="10,175,0,0" VerticalAlignment="Top" Width="426" FontFamily="MV Boli" FontSize="18" Initialized="curStr_Initialized"/>
+        <Label x:Name="curVit" HorizontalAlignment="Left" Height="48" Margin="10,234,0,0" VerticalAlignment="Top" Width="426" FontFamily="MV Boli" FontSize="18" Initialized="curVit_Initialized"/>
+        <Label x:Name="curDex" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="426" FontFamily="MV Boli" FontSize="18" Initialized="curDex_Initialized" Margin="10,292,0,0"/>
+        <Label x:Name="curInt" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="426" FontFamily="MV Boli" FontSize="18" Initialized="curInt_Initialized" Margin="10,350,0,0"/>
         <Label x:Name="curHp" Content="" HorizontalAlignment="Left" Height="48" Margin="10,122,0,0" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="curHp_Initialized"/>
         <Label x:Name="curMp" Content="" HorizontalAlignment="Left" Height="48" Margin="165,120,0,0" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="curMp_Initialized"/>
-        <Button x:Name="plusStr" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,177,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusStr_Initialized" Click="plusStr_Click"/>
-        <Button x:Name="plusVit" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,236,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusVit_Initialized" Click="plusVit_Click"/>
-        <Button x:Name="plusDex" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,294,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusDex_Initialized" Click="plusDex_Click"/>
-        <Button x:Name="plusInt" Content="+" HorizontalAlignment="Left" Height="44" Margin="325,352,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusInt_initialized" Click="plusInt_Click"/>
+        <Button x:Name="plusStr" Content="+" HorizontalAlignment="Left" Height="44" Margin="441,179,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusStr_Initialized" Click="plusStr_Click"/>
+        <Button x:Name="plusVit" Content="+" HorizontalAlignment="Left" Height="44" Margin="441,238,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusVit_Initialized" Click="plusVit_Click"/>
+        <Button x:Name="plusDex" Content="+" HorizontalAlignment="Left" Height="44" Margin="441,296,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusDex_Initialized" Click="plusDex_Click"/>
+        <Button x:Name="plusInt" Content="+" HorizontalAlignment="Left" Height="44" Margin="441,354,0,0" VerticalAlignment="Top" Width="51" FontFamily="MV Boli" FontSize="18" Initialized="plusInt_initialized" Click="plusInt_Click"/>
         <Label x:Name="phys_dmg" HorizontalAlignment="Left" Height="48" Margin="10,403,0,0" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="phys_dmg_Initialized"/>
         <Label x:Name="armor" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="armor_Initialized" Margin="170,403,0,0"/>
         <Label x:Name="mdmg" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="mdmg_initialized" Margin="10,456,0,0"/>
         <Label x:Name="mdef" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="mdef_initialized" Margin="170,456,0,0"/>
         <Label x:Name="crtchance" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="156" FontFamily="MV Boli" FontSize="18" Initialized="crtch_initialized" Margin="330,403,0,0"/>
         <Label x:Name="crtdmg" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="155" FontFamily="MV Boli" FontSize="18" Initialized="crtdmg_initialized" Margin="330,456,0,0"/>
-        <Button x:Name="minusStr" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,177,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusStr_initialized" Click="minusStr_click"/>
-        <Button x:Name="minusVit" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,236,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="MinusVit_initialized" Click="minusVit_click"/>
-        <Button x:Name="minusDex" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,294,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusDex_initialized" Click="MinusDex_click"/>
-        <Button x:Name="minusInt" Content="-" HorizontalAlignment="Left" Height="44" Margin="382,352,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusInt_initialized" Click="minusInt_click"/>
+        <Button x:Name="minusStr" Content="-" HorizontalAlignment="Left" Height="44" Margin="498,179,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusStr_initialized" Click="minusStr_click"/>
+        <Button x:Name="minusVit" Content="-" HorizontalAlignment="Left" Height="44" Margin="498,238,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="MinusVit_initialized" Click="minusVit_click"/>
+        <Button x:Name="minusDex" Content="-" HorizontalAlignment="Left" Height="44" Margin="498,296,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusDex_initialized" Click="MinusDex_click"/>
+        <Button x:Name="minusInt" Content="-" HorizontalAlignment="Left" Height="44" Margin="498,354,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusInt_initialized" Click="minusInt_click"/>
         <Label x:Name="points" Content="Points:" HorizontalAlignment="Left" Height="58" Margin="555,179,0,0" VerticalAlignment="Top" Width="192" Initialized="points_Initialized"/>
         <Button x:Name="points_btn" Content="+100&#xA;" HorizontalAlignment="Left" Height="36" Margin="555,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn_Initialized" Click="points_btn_Click"/>
         <Label x:Name="lvl_label" Content="Level" HorizontalAlignment="Left" Height="46" Margin="555,124,0,0" VerticalAlignment="Top" Width="96" Initialized="lvl_label_Initialized"/>
         <Button x:Name="points_btn1" Content="+500&#xA;" HorizontalAlignment="Left" Height="36" Margin="608,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn1_Initialized" Click="points_btn1_Click"/>
         <Button x:Name="points_btn2" Content="+1000&#xA;" HorizontalAlignment="Left" Height="36" Margin="661,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn2_Initialized" Click="points_btn2_Click"/>
         <Label x:Name="exp_label" Content="exp:" HorizontalAlignment="Left" Height="48" Margin="656,122,0,0" VerticalAlignment="Top" Width="147" Initialized="exp_label_Initialized"/>
-        <Label x:Name="Test" Content="Label" HorizontalAlignment="Left" Height="122" Margin="555,252,0,0" VerticalAlignment="Top" Width="192" Loaded="Test_Loaded"/>
+        <ComboBox x:Name="Weapon" HorizontalAlignment="Left" Height="60" Margin="783,26,0,0" VerticalAlignment="Top" Width="198" Loaded="Weapon_Loaded" SelectionChanged="Weapon_SelectionChanged"/>
 
     </Grid>
 </Window>

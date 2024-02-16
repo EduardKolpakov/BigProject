@@ -47,6 +47,14 @@ namespace WPFCharacters
         { get; set; }
         public double it2
         { get; set; }
+        public int TStr
+        { get; set; }
+        public int TDex
+        { get; set; }
+        public int TInt
+        { get; set; }
+        public IWeapon weapon
+        { get; set; }
         public void StatsCalc()
         { }
     }

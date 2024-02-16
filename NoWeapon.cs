@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WPFCharacters
 {
-    internal class NoWeapon
+    internal class NoWeapon : IWeapon
     {
         private string _qual;
         private string _name;
@@ -19,9 +19,9 @@ namespace WPFCharacters
         private double _dex_b;
         private bool _shield;
         private double _hp_b;
-        public NoWeapon(string qual)
+        public NoWeapon()
         {
-            Quality = qual;
+            Quality = "No quality";
             Name = "Staff";
         }
 

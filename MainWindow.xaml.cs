@@ -84,6 +84,7 @@ namespace WPFCharacters
             points_btn1.Visibility = Visibility.Visible;
             points_btn2.Visibility = Visibility.Visible;
             exp_label.Visibility = Visibility.Visible;
+            Weapon.Visibility = Visibility.Visible;
             lvlupd();
             expupd();
             pointsUpd();
@@ -162,11 +163,10 @@ namespace WPFCharacters
         public void statsUpdate()
         {
             character.StatsCalc();
-            Test.Content = $"test int: {character.it}\ntest int(raw): {character.it2}";
-            curStr.Content = $"Your character's strength is {character.Strength}";
+            curStr.Content = $"Your character's strength is {character.TStr} -> {character.Strength}";
             curVit.Content = $"Your character's vitality is {character.Vitality}";
-            curDex.Content = $"Your character's dexterity is {character.Dexterity}";
-            curInt.Content = $"Your character's Inteligence is {character.Inteligence}";
+            curDex.Content = $"Your character's dexterity is {character.TDex} -> {character.Dexterity}";
+            curInt.Content = $"Your character's Inteligence is {character.TInt} -> {character.Inteligence}";
             phys_dmg.Content = $"p.dmg: {character.PDmg}";
             armor.Content = $"armor: {character.Armor}";
             mdmg.Content = $"mdmg: {character.MDmg}";
@@ -209,10 +209,10 @@ namespace WPFCharacters
         {
             if (character.points > 0)
             {
-                int oldstat = character.Inteligence;
+                int oldstat = character.TInt;
                 int dif;
-                character.Inteligence++;
-                dif = oldstat - character.Inteligence;
+                character.TInt++;
+                dif = oldstat - character.TInt;
                 character.points += dif;
                 pointsUpd();
             }
@@ -378,9 +378,42 @@ namespace WPFCharacters
             exp_label.Content = $"exp: {character.exp}";
         }
 
-        private void Test_Loaded(object sender, RoutedEventArgs e)
+        private void Weapon_Loaded(object sender, RoutedEventArgs e)
         {
-            Test.Content = "Hi";
+            Weapon.Visibility = Visibility.Hidden;
+            Weapon.Items.Add("No weapon");
+            Weapon.Items.Add("Common staff");
+            Weapon.Items.Add("Enchanted staff");
+            Weapon.Items.Add("Rare staff");
+        }
+
+        private void Weapon_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string sel = Weapon.SelectedValue.ToString();
+            switch (sel)
+                {
+                case "No weapon":
+                    {
+                        character.weapon = new NoWeapon();
+                        break;
+                    }
+                case "Common staff":
+                    {
+                        character.weapon = new Staff("common");
+                        break;
+                    }
+                case "Enchanted staff":
+                    {
+                        character.weapon = new Staff("enchanted");
+                        break;
+                    }
+                case "Rare staff":
+                    {
+                        character.weapon = new Staff("rare");
+                        break;
+                    }
+            }
+            statsUpdate();
         }
     }
 }

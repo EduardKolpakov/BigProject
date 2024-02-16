@@ -32,17 +32,47 @@ namespace WPFCharacters
             set
             {
                 _qual = value;
-                if (_qual == "common")
+                switch (_qual)
                 {
-                    PDmg_b = 1.05;
-                    Mana_b = 1.5;
-                    Int_b = 1.2;
-                    CC_b = 5;
-                    CD_b = 300;
-                    Dex_b = 1;
-                    hp_b = 1;
-                    Str_b = 1;
-                    Shield = false;
+                    case "common":
+                        {
+                            PDmg_b = 1.05;
+                            Mana_b = 1.5;
+                            Int_b = 1.2;
+                            CC_b = 5;
+                            CD_b = 300;
+                            Dex_b = 1;
+                            hp_b = 1;
+                            Str_b = 1;
+                            Shield = false;
+                            break;
+                        }
+                    case "enchanted":
+                        {
+                            PDmg_b = 1.1;
+                            Mana_b = 2;
+                            Int_b = 1.4;
+                            CC_b = 10;
+                            CD_b = 450;
+                            Dex_b = 1;
+                            hp_b = 1;
+                            Str_b = 1;
+                            Shield = false;
+                            break;
+                        }
+                    case "rare":
+                        {
+                            PDmg_b = 1.15;
+                            Mana_b = 2.5;
+                            Int_b = 1.6;
+                            CC_b = 15;
+                            CD_b = 600;
+                            Dex_b = 1;
+                            hp_b = 1;
+                            Str_b = 1;
+                            Shield = false;
+                            break;
+                        }
                 }
             }
         }

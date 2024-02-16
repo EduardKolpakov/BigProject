@@ -31,29 +31,32 @@ namespace WPFCharacters
         private int _points;
         private int IntTest;
         private double IntTest2;
+        private int tStr;
+        private int tDex;
+        private int tInt;
+        private IWeapon _weap = new NoWeapon();
         public Rogue()
         {
-            Strength = 20;
-            Dexterity = 30;
-            Inteligence = 15;
+            TStr = 20;
+            TDex = 30;
+            TInt = 15;
             Vitality = 20;
             exp = 0;
-            addVital();
+            StatsCalc();
         }
         public int Strength
         {
             get { return _str; }
             set
             {
-                _str = value;
-                if (_str > _maxstr)
+                tStr = value;
+                if (tStr > _maxstr)
                 {
                     Strength = _maxstr;
                 }
-                if (_str < 20)
-                    _str = 20;
-                addVital();
-                addPdmg();
+                if (tStr < 20)
+                    tStr = 20;
+                _str = (int)Math.Floor(tStr * weapon.Str_b);
             }
         }
         public int Vitality
@@ -68,52 +71,21 @@ namespace WPFCharacters
                 }
                 if (_vit < 20)
                     _vit = 20;
-                addVital();
             }
         }
         public int Inteligence
         {
             get { return _int; }
-            set 
+            set
             {
-                _int = value;
-                double manaleft = 0;
-                int mp = 0;
-                double mdmgb = 0;
-                int mdmg = 0;
-                double mdefb = 0;
-                int mdef = 0;
-                if (_int > _maxint)
+                tInt = value;
+                if (tInt > _maxint)
                 {
-                    _int = _maxint;
+                    tInt = _maxint;
                 }
-                if (_int < 15)
-                    _int = 15;
-                for (int i = 0; i < _int; i++)
-                {
-                    mdmgb += 0.2;
-                    mdefb += 0.5;
-                    mp += 1;
-                    manaleft += 0.2;
-                    if (manaleft >= 1)
-                    {
-                        mp += 1;
-                        manaleft -= 1;
-                    }
-                    if (mdefb >= 1)
-                    {
-                        mdef++;
-                        mdefb--;
-                    }
-                    if (mdmgb >= 1)
-                    {
-                        mdmg++;
-                        mdmgb--;
-                    }
-                }
-                MDmg = mdmg;
-                MDef = mdef;
-                MaxMana = mp;
+                if (tInt < 15)
+                    tInt = 15;
+                _int = (int)Math.Floor(tInt * weapon.Int_b);
             }
         }
         public int Dexterity
@@ -121,45 +93,14 @@ namespace WPFCharacters
             get { return _dex; }
             set
             {
-                _dex = value;
-                double armorb = 0;
-                int arm = 0;
-                double crtc = 0;
-                int crtch = 0;
-                double crtd = 0.000001;
-                int crtdm = 0;
-                if (_dex > _maxdex)
+                tDex = value;
+                if (tDex > _maxdex)
                 {
-                    _dex = _maxdex;
+                    tDex = _maxdex;
                 }
-                if (_dex < 30)
-                    _dex = 30;
-                for (int i = 0; i <_dex; i++)
-                {
-                    crtc += 0.2;
-                    crtd += 0.1;
-                    arm++;
-                    armorb += 0.5;
-                    if (armorb >= 1)
-                    {
-                        arm++;
-                        armorb--;
-                    }
-                    if (crtc >= 1)
-                    {
-                        crtc--;
-                        crtch++;
-                    }
-                    if (crtd >= 1)
-                    {
-                        crtdm++;
-                        crtd--;
-                    }
-                }
-                CrtChance = crtch;
-                CrtDmg = crtdm;
-                Armor = arm;
-                addPdmg();
+                if (tDex < 30)
+                    tDex = 30;
+                _dex = (int)Math.Floor(tDex * weapon.Dex_b);
             }
         }
         public int Health
@@ -246,30 +187,6 @@ namespace WPFCharacters
                 _crtdmg = value;
             }
         }
-        public void addPdmg()
-        {
-            double pdmgb = 0;
-            int pdmgc = 0;
-            for (int i = 0; i < Dexterity; i++) 
-            {
-                pdmgb += 0.5;
-                if (pdmgb >= 1)
-                {
-                    pdmgc++;
-                    pdmgb--;
-                }
-            }
-            for (int i = 0; i < Strength; i++)
-            {
-                pdmgb += 0.5;
-                if (pdmgb >= 1)
-                {
-                    pdmgc++;
-                    pdmgb--;
-                }
-            }
-            PDmg = pdmgc;
-        }
         public int level
         {
             get { return _lvl; }
@@ -303,36 +220,66 @@ namespace WPFCharacters
             }
         }
         public int it
-        { get { return IntTest; } set { IntTest = value; } }
-        public double it2
-        { get { return IntTest2; } set { IntTest2 = value; } }
-        public void addVital()
         {
-            int hp = 0;
-            double hpleft = 0;
-            for (int i = 0; i < _vit; i++)
+            get { return IntTest; }
+            set { IntTest = value; }
+        }
+        public double it2
+        {
+            get { return IntTest2; }
+            set { IntTest2 = value; }
+        }
+        public int TStr
+        {
+            get { return tStr; }
+            set { tStr = value; }
+        }
+        public int TInt
+        {
+            get { return tInt; }
+            set { tInt = value; }
+        }
+        public int TDex
+        {
+            get { return tDex; }
+            set { tDex = value; }
+        }
+        public IWeapon weapon
+        {
+            get { return _weap; }
+            set
             {
-                hp += 1;
-                hpleft += 0.5;
-                if (hpleft >= 1)
-                {
-                    hp += 1;
-                    hpleft -= 1;
-                }
+                _weap = value;
+                StatsCalc();
             }
-            for (int i = 0; i < _str; i++)
-            {
-                hpleft += 0.5;
-                if (hpleft >= 1)
-                {
-                    hp += 1;
-                    hpleft -= 1;
-                }
-            }
-            MaxHealth = hp;
         }
         public void StatsCalc()
-        { }
+        {
+            double hp_full = (Vitality * 1.5 + Strength * 0.5) * weapon.hp_b;
+            int hpr = (int)Math.Floor(hp_full);
+            MaxHealth = hpr;
+            double pdmb = (Strength * 0.5 + Dexterity * 0.5) * weapon.PDmg_b;
+            int pdm = (int)Math.Floor(pdmb);
+            PDmg = pdm;
+            double armd = Dexterity * 1.5;
+            int arm = (int)Math.Floor(armd);
+            Armor = arm;
+            double manad = (Inteligence * 1.2) * weapon.Mana_b + 0.00001;
+            int mana = (int)Math.Floor(manad);
+            MaxMana = mana;
+            double crtc = Dexterity * 0.2;
+            int crtch = (int)Math.Floor(crtc);
+            CrtChance = crtch + weapon.CC_b;
+            double crtd = Dexterity * 0.1;
+            int crtdm = (int)Math.Floor(crtd);
+            CrtDmg = crtdm + weapon.CD_b;
+            double mdmg = Inteligence * 0.2;
+            int mdm = (int)Math.Floor(mdmg);
+            MDmg = mdm;
+            double mdef = Inteligence * 0.5;
+            int mdf = (int)Math.Floor(mdef);
+            MDef = mdf;
+        }
     }
 }
 
