@@ -180,7 +180,13 @@ namespace WPFCharacters
             {
                 int oldlvl = level;
                 _exp = value;
-                level = _exp / 1000 + 1;
+                if (_exp == ((level + 1) * 1000))
+                {
+                    exp -= 1000 * (level + 1);
+                    level++;
+                }
+                if (level > 100)
+                    level = 100;
                 if (level - oldlvl > 0)
                 {
                     points += 5;
