@@ -34,7 +34,6 @@ namespace WPFCharacters
         private void class_select_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string selected = class_select.SelectedValue.ToString();
-            //class_select.Visibility = Visibility.Collapsed;
             classLabel.Content = $"Your character's class: {selected}";
             if (selected == "Rogue")
             {
