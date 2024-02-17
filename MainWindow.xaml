@@ -32,13 +32,22 @@
         <Button x:Name="minusVit" Content="-" HorizontalAlignment="Left" Height="44" Margin="498,238,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="MinusVit_initialized" Click="minusVit_click"/>
         <Button x:Name="minusDex" Content="-" HorizontalAlignment="Left" Height="44" Margin="498,296,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusDex_initialized" Click="MinusDex_click"/>
         <Button x:Name="minusInt" Content="-" HorizontalAlignment="Left" Height="44" Margin="498,354,0,0" VerticalAlignment="Top" Width="52" FontFamily="MV Boli" FontSize="18" Initialized="minusInt_initialized" Click="minusInt_click"/>
-        <Label x:Name="points" Content="Points:" HorizontalAlignment="Left" Height="58" Margin="555,179,0,0" VerticalAlignment="Top" Width="192" Initialized="points_Initialized"/>
+        <Label x:Name="points" Content="Points:" HorizontalAlignment="Left" Height="58" Margin="555,245,0,0" VerticalAlignment="Top" Width="192" Initialized="points_Initialized"/>
         <Button x:Name="points_btn" Content="+100&#xA;" HorizontalAlignment="Left" Height="36" Margin="555,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn_Initialized" Click="points_btn_Click"/>
         <Label x:Name="lvl_label" Content="Level" HorizontalAlignment="Left" Height="46" Margin="555,124,0,0" VerticalAlignment="Top" Width="96" Initialized="lvl_label_Initialized"/>
         <Button x:Name="points_btn1" Content="+500&#xA;" HorizontalAlignment="Left" Height="36" Margin="608,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn1_Initialized" Click="points_btn1_Click"/>
         <Button x:Name="points_btn2" Content="+1000&#xA;" HorizontalAlignment="Left" Height="36" Margin="661,24,0,0" VerticalAlignment="Top" Width="48" Initialized="points_btn2_Initialized" Click="points_btn2_Click"/>
-        <Label x:Name="exp_label" Content="exp:" HorizontalAlignment="Left" Height="48" Margin="656,122,0,0" VerticalAlignment="Top" Width="147" Initialized="exp_label_Initialized"/>
+        <Label x:Name="exp_label" Content="exp:" HorizontalAlignment="Left" Height="48" Margin="555,183,0,0" VerticalAlignment="Top" Width="147" Initialized="exp_label_Initialized"/>
         <ComboBox x:Name="Weapon" HorizontalAlignment="Left" Height="60" Margin="783,26,0,0" VerticalAlignment="Top" Width="198" Loaded="Weapon_Loaded" SelectionChanged="Weapon_SelectionChanged"/>
+        <Label x:Name="pdmgB" Content="" HorizontalAlignment="Left" Height="48" Margin="783,120,0,0" VerticalAlignment="Top" Width="198"/>
+        <Label x:Name="ManaB" HorizontalAlignment="Left" Height="48" Margin="783,173,0,0" VerticalAlignment="Top" Width="198" Content=""/>
+        <Label x:Name="Strb" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="198" Margin="783,226,0,0"/>
+        <Label x:Name="DexB" Content="" HorizontalAlignment="Left" Height="48" Margin="783,279,0,0" VerticalAlignment="Top" Width="198"/>
+        <Label x:Name="IntB" HorizontalAlignment="Left" Height="48" Margin="783,332,0,0" VerticalAlignment="Top" Width="198" Content=""/>
+        <Label x:Name="HPB" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="198" Margin="783,385,0,0"/>
+        <Label x:Name="CcB" Content="" HorizontalAlignment="Left" Height="48" Margin="783,437,0,0" VerticalAlignment="Top" Width="198"/>
+        <Label x:Name="CdB" HorizontalAlignment="Left" Height="48" Margin="783,490,0,0" VerticalAlignment="Top" Width="198" Content=""/>
+        <Label x:Name="shield" Content="" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="198" Margin="783,543,0,0"/>
 
     </Grid>
 </Window>

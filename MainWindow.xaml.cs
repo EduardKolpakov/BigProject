@@ -502,7 +502,25 @@ namespace WPFCharacters
                         break;
                     }
             }
+            WeaponInfo();
             statsUpdate();
+        }
+        public void WeaponInfo()
+        {
+            string avn = "available";
+            if (character.weapon.Shield == false)
+            {
+                avn = "unavailable";
+            }
+            pdmgB.Content = $"P.dmg boost: {character.weapon.PDmg_b}";
+            ManaB.Content = $"Mana boost: {character.weapon.Mana_b}";
+            Strb.Content = $"Strength boost: {character.weapon.Str_b}";
+            DexB.Content = $"Dexterity boost: {character.weapon.Dex_b}";
+            IntB.Content = $"Intelligence boost: {character.weapon.Int_b}";
+            HPB.Content = $"HP boost: {character.weapon.hp_b}";
+            CcB.Content = $"Crt chance boost: {character.weapon.CC_b}";
+            CdB.Content = $"Crt damage boost: {character.weapon.CD_b}";
+            shield.Content = $"Shield: {character.weapon.Shield}";
         }
     }
 }
